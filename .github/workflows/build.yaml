@@ -12,7 +12,7 @@ on:
 
 jobs:
   dotnet-build:
-  uses: github-actions-training/.github/.github/workflows/dotnet-build-notests.yml@main
-  with:
-    artifact_name: artifacts
+    uses: github-actions-training/.github/.github/workflows/dotnet-build-notests.yml@main
+    with:
+      artifact_name: artifacts
 
