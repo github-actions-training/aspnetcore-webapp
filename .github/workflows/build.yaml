@@ -16,3 +16,11 @@ jobs:
     with:
       artifact_name: artifacts
 
+  infra-as-code:
+    runs-on: ubuntu-latest
+    needs: dotnet-build
+    steps:
+      # See https://github.com/marketplace/actions/azure-login#configure-a-service-principal-with-a-secret
+      - uses: Azure/login@v1
+        with:
+          creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
