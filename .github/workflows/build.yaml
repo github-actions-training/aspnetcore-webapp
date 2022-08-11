@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: dotnet-build
     env:
-      RESOURCE_GROUP_NAME: jordantools-web
+      RESOURCE_GROUP_NAME: jordantools-demo
       WEBAPP_NAME: jordantools
     steps:
       - uses: actions/download-artifact@v3
