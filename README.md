@@ -2,7 +2,7 @@
 
 | Branch | Status |
 | --- | --- |
-| master | [![Build](https://github.com/github-actions-training/aspnetcore-webapp/actions/workflows/build.yaml/badge.svg)](https://github.com/github-actions-training/aspnetcore-webapp/actions/workflows/build.yaml) |
+| main | [![Build](https://github.com/github-actions-training/aspnetcore-webapp/actions/workflows/build.yaml/badge.svg)](https://github.com/github-actions-training/aspnetcore-webapp/actions/workflows/build.yaml) |
 
 
 
