@@ -42,4 +42,4 @@ jobs:
         with:
           inlineScript: |
             az group create --name ${{ env.RESOURCE_GROUP_NAME }} --location australiasoutheast
-            az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file infrastrcture/main.bicep --parameters webAppName=jordantools
+            az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file infrastructure/main.bicep --parameters webAppName=jordantools
