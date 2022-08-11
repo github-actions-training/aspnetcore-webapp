@@ -21,6 +21,7 @@ jobs:
     needs: dotnet-build
     env:
       RESOURCE_GROUP_NAME: jordantools-web
+      WEBAPP_NAME: jordantools
     steps:
       - uses: actions/download-artifact@v3
         with:
@@ -42,4 +43,11 @@ jobs:
         with:
           inlineScript: |
             az group create --name ${{ env.RESOURCE_GROUP_NAME }} --location australiasoutheast
-            az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file infrastructure/main.bicep --parameters webAppName=jordantools
+            az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file infrastructure/main.bicep --parameters webAppName=${{ env.WEBAPP_NAME }}
+
+      # Deploy to Azure Web apps
+      - name: 'Deploy Code'
+        uses: azure/webapps-deploy@v2
+        with: 
+          app-name: ${{ env.WEBAPP_NAME }}
+          package: 'artifacts'
