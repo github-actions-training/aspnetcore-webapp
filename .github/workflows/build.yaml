@@ -16,7 +16,7 @@ jobs:
     with:
       artifact_name: artifacts
 
-  infra-as-code:
+  build-infrastructure-and-deploy:
     runs-on: ubuntu-latest
     needs: dotnet-build
     env:
